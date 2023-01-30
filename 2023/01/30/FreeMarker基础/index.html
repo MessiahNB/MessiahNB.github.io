@@ -16,15 +16,15 @@
   <meta name="author" content="Messiah">
   <meta name="keywords" content="">
   
-    <meta name="description" content="一、创建用户并赋予权限 1、创建用户 create user messiah identified by 123456; 2、赋权 grant dba to messiah; grant create session to messiah; –会话权限（没有该权限无法登录，也可以直接将OBA角色给予） 3、查看已经赋予用户的系统权限 select * from user_sys_privs; 二、">
+    <meta name="description" content="Freemaker基础官方文档：http:&#x2F;&#x2F;www.kerneler.com&#x2F;freemarker2.3.23&#x2F;toc.html FreeMarker 是一款 模板引擎： 即一种基于模板和要改变的数据， 并用来生成输出文本(HTML网页，电子邮件，配置文件，源代码等)的通用工具。 它不是面向最终用户的，而是一个Java类库，是一款程序员可以嵌入他们所开发产品的组件。 模板编写为FreeMarke">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Oracle用户角色权限基本操作">
-<meta property="og:url" content="http://messiahnb.github.io/2022/12/05/Oracle%E7%94%A8%E6%88%B7%E8%A7%92%E8%89%B2%E6%9D%83%E9%99%90%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/index.html">
+<meta property="og:title" content="FreeMarker基础">
+<meta property="og:url" content="http://messiahnb.github.io/2023/01/30/FreeMarker%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="Messiah">
-<meta property="og:description" content="一、创建用户并赋予权限 1、创建用户 create user messiah identified by 123456; 2、赋权 grant dba to messiah; grant create session to messiah; –会话权限（没有该权限无法登录，也可以直接将OBA角色给予） 3、查看已经赋予用户的系统权限 select * from user_sys_privs; 二、">
+<meta property="og:description" content="Freemaker基础官方文档：http:&#x2F;&#x2F;www.kerneler.com&#x2F;freemarker2.3.23&#x2F;toc.html FreeMarker 是一款 模板引擎： 即一种基于模板和要改变的数据， 并用来生成输出文本(HTML网页，电子邮件，配置文件，源代码等)的通用工具。 它不是面向最终用户的，而是一个Java类库，是一款程序员可以嵌入他们所开发产品的组件。 模板编写为FreeMarke">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-12-05T01:36:28.000Z">
-<meta property="article:modified_time" content="2022-12-05T01:37:51.355Z">
+<meta property="article:published_time" content="2023-01-30T01:07:15.000Z">
+<meta property="article:modified_time" content="2023-01-30T02:13:31.476Z">
 <meta property="article:author" content="Messiah">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -32,7 +32,7 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>Oracle用户角色权限基本操作 - Messiah</title>
+  <title>FreeMarker基础 - Messiah</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -197,7 +197,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Oracle用户角色权限基本操作"></span>
+            <span id="subtitle" data-typed-text="FreeMarker基础"></span>
           
         </div>
 
@@ -208,8 +208,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-12-05 09:36" pubdate>
-          2022-12-05 09:36:28
+        <time datetime="2023-01-30 09:07" pubdate>
+          2023-01-30 09:07:15
         </time>
       </span>
     
@@ -220,7 +220,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.3k 字
+          1.6k 字
         
       </span>
     
@@ -231,7 +231,7 @@
         
         
         
-          20 分钟
+          14 分钟
         
       </span>
     
@@ -287,12 +287,12 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Oracle用户角色权限基本操作</h1>
+            <h1 style="display: none">FreeMarker基础</h1>
             
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2022-12-05 09:37:51
+                    本文最后更新于：2023-01-30 10:13:31
                   
                 
               </p>
@@ -300,99 +300,36 @@
             
               <div class="markdown-body">
                 
-                <p>一、创建用户并赋予权限</p>
-<p>1、创建用户</p>
-<p>create user messiah identified by 123456;</p>
-<p>2、赋权</p>
-<p>grant dba to messiah;</p>
-<p>grant create session to messiah; –会话权限（没有该权限无法登录，也可以直接将OBA角色给予）</p>
-<p>3、查看已经赋予用户的系统权限</p>
-<p>select * from user_sys_privs;</p>
-<p>二、创建角色</p>
-<p>角色，即权限的集合，可以把一个角色授予给用户</p>
-<p>1、创建角色</p>
-<p>create role myrole;</p>
-<p>2、赋权</p>
-<p>grant create session to myrole;–将创建session的权限授予给角色myrole</p>
-<p>3、赋角色给用户</p>
-<p>grant myrole to zhangsan;–授予zhangsan用户myrole的角色</p>
-<p>4、删除角色</p>
-<p>drop role myrole;</p>
-<p>查看所有用户</p>
-<p>select * from dba_users;</p>
-<p>select * from all_users;</p>
-<p>select * from user_users;</p>
-<p>alter user user_name account lock; 锁住用户</p>
-<p>alter user user_name account unlock; 解锁用户</p>
-<p>查询当前用户所拥有的权限</p>
-<p>select * from session_privs;</p>
-<p>查看用户被赋予的系统权限(直接赋值给用户或角色的系统权限)</p>
-<p>select * from dba_sys_privs where grantee &#x3D; ‘RESOURCE’;</p>
-<p>select * from user_sys_privs;</p>
-<p>注：USER_SYS_PRIVS 视图列出已经授予用户的系统权限。</p>
-<p>它的列包括Username、Privilege和 Admin_Option(设置为YES 或NO 的一个标志，用来指出是否用with admin option 授予权限)，直接授予用户的所有系统权限都可以通过该视图显示，通过角色授予用户的系统权限不能在此视图中显示。</p>
-<p>查看所有角色</p>
-<p>select * from dba_roles;</p>
-<p>查看用户所拥有的角色</p>
-<p>select * from session_roles order by role;–返回当前用户被授予的全部角色, 包括嵌套授权的角色</p>
-<p>select * from dba_role_privs;</p>
-<p>select * from user_role_privs;</p>
-<p>查看当前用户角色所包含的权限</p>
-<p>select * from role_sys_privs where role &#x3D; ‘CONNECT’;</p>
-<p>查看用户对象权限</p>
-<p>select * from dba_tab_privs;</p>
-<p>select * from all_tab_privs;</p>
-<p>select * from user_tab_privs;</p>
-<p>查看哪些用户有sysdba或sysoper系统权限(查询时需要相应权限)</p>
-<p>select * from v$pwfile_users;</p>
-<p>查看用户与默认表空间的关系</p>
-<p>select username, default_tablespace from dba_users where username&#x3D;’SCOTT’;</p>
-<p>查看当前用户的表</p>
-<p>select * from user_tables;</p>
-<p>可视化赋权：</p>
-<p>1、使用ins用户建表</p>
-<p>2、使用mobapp用户（管理员）将ins用户的某个表赋权给odso用户</p>
-<p>users——&gt;ins，选中要赋权的表赋权（右键，编辑，权限）</p>
-<p>等同于：grant select, insert, update, delete on ins.tb_cablecheck_equ_odso to odso;</p>
-<p>3、使用odso用户登录，增删改查该表测试</p>
-<p>命令赋权：</p>
-<p>赋予权限：grant … to …</p>
-<p>撤销权限：revoke … from …</p>
-<p>登陆</p>
-<p>grant create session to zhangsan;</p>
-<p>使用表空间</p>
-<p>grant unlimited tablespace to zhangsan;</p>
-<p>创建表</p>
-<p>grant create table to zhangsan;</p>
-<p>删除表</p>
-<p>grant drop table to zhangsan;</p>
-<p>grant drop on table_name to user_name;</p>
-<p>插入表</p>
-<p>grant insert table to zhangsan;</p>
-<p>grant insert on table_name to user_name;</p>
-<p>grant insert(id) on table_name to user_name;</p>
-<p>更新表数据</p>
-<p>grant update table to zhangsan;</p>
-<p>grant update on table_name to user_name;</p>
-<p>grant update(id) on table_name to user_name;</p>
-<p>修改表结构</p>
-<p>grant alter table on table_name to user_name;</p>
-<p>查询表</p>
-<p>grant select on table_name to user_name;</p>
-<p>创建过程</p>
-<p>grant create any procedure to username;</p>
-<p>执行过程</p>
-<p>grant execute any procedure to username;</p>
-<p>grant execute on ins.p_trun_link_odso to odso_insert；</p>
-<p>授予所有权限(all)给所有用户(public)</p>
-<p>grant all to public;</p>
-<p>权限传递</p>
-<p>即用户A将权限授予B，B可以将操作的权限再授予C，</p>
-<p>命令如下：</p>
-<p>grant alter table on table_name to user_name with admin option;</p>
-<p>grant update on table_name to user_name with grant option; –转移更新权限</p>
-<p>grant alter table on table_name to user_name with grant option;</p>
-
+                <h1 id="Freemaker基础"><a href="#Freemaker基础" class="headerlink" title="Freemaker基础"></a>Freemaker基础</h1><p>官方文档：<a target="_blank" rel="noopener" href="http://www.kerneler.com/freemarker2.3.23/toc.html">http://www.kerneler.com/freemarker2.3.23/toc.html</a></p>
+<p>FreeMarker 是一款 <em>模板引擎</em>： 即一种基于模板和要改变的数据， 并用来生成输出文本(HTML网页，电子邮件，配置文件，源代码等)的通用工具。 它不是面向最终用户的，而是一个Java类库，是一款程序员可以嵌入他们所开发产品的组件。</p>
+<p>模板编写为FreeMarker Template Language (FTL)，生成类型为ftl结尾后缀的文件，需要注意的是fll语言是区分大小写的，特别在指令的使用时。</p>
+<h2 id="模板怎么写"><a href="#模板怎么写" class="headerlink" title="模板怎么写"></a>模板怎么写</h2><p>首先模板文件存放在Web服务器上，就像通常存放静态HTML页面那样。当有人来访问这个页面， FreeMarker将会介入执行，然后动态转换模板，用最新的数据内容替换模板中 <code>$&#123;...&#125;</code> 的部分， 之后将结果发送到访问者的Web浏览器中。这整个过程就是 将 模板+数据模型 &#x3D; 输出。</p>
+<p> 在模板中使用<code>$&#123;xxx&#125;</code>来获取数据模型中的标量值。</p>
+<p>显而易见数据模型就是我们为模板而准备的，也就是说需要在模板中所使用的到的数据。一般数据模型给人的感觉就是一种树形的目录结构，存储具体的单值的变量我们称之为<strong>scalars</strong> （标量），而标量一般都只存在于子变量中，多个子变量构成集合，在这里被称为序列，和集合一样在序列中的子变量没有名字，只是列表中的项。</p>
+<p>标量类型可以分为如下的类别：</p>
+<ul>
+<li>字符串：就是文本，也就是任意的字符序列，比如上面提到的 ‘’m’’, ‘’o’’, ‘’u’’, ‘’s’’, ‘’e’’。比如 <code>name</code> 和 <code>size</code> 也是字符串。</li>
+<li>数字：这是数值类型，就像上面的 <code>price</code>。 在FreeMarker中，字符串 <code>&quot;50&quot;</code> 和数字 <code>50</code> 是两种完全不同的东西。前者是两个字符的序列 (这恰好是人们可以读的一个数字)，而后者则是可以在数学运算中直接被使用的数值。</li>
+<li>日期&#x2F;时间: 可以是日期-时间格式(存储某一天的日期和时间)， 或者是日期(只有日期，没有时间)，或者是时间(只有时间，没有日期)。</li>
+<li>布尔值：对应着对&#x2F;错(是&#x2F;否，开&#x2F;关等值)类似的值。 比如动物可以有一个 <code>protected</code> (受保护的，译者注) 的子变量， 该变量存储这个动物是否被保护起来的值。</li>
+</ul>
+<p>总结：</p>
+<ul>
+<li>数据模型可以被看成是树形结构。</li>
+<li>标量用于存储单一的值。这种类型的值可以是字符串，数字，日期&#x2F;时间或者是布尔值。</li>
+<li>哈希表是一种存储变量及其相关且有唯一标识名称的容器。</li>
+<li>序列是存储有序变量的容器。存储的变量可以通过数字索引来检索，索引通常从0开始。</li>
+</ul>
+<h2 id="总体结构"><a href="#总体结构" class="headerlink" title="总体结构"></a>总体结构</h2><p>实际上用程序语言编写的程序就是模板。 <strong>FTL</strong> (代表FreeMarker模板语言)。 这是为编写模板设计的非常简单的编程语言。</p>
+<p>模板(FTL编程)是由如下部分混合而成的：</p>
+<ul>
+<li><strong>文本</strong>：文本会照着原样来输出。</li>
+<li><strong>插值</strong>：这部分的输出会被计算的值来替换。插值由 <code>$&#123;</code> and <code>&#125;</code> 所分隔(或者 <code>#&#123;</code> and <code>&#125;</code>，这种风格已经不建议再使用了；<a target="_blank" rel="noopener" href="http://www.kerneler.com/freemarker2.3.23/ref_depr_numerical_interpolation.html">点击查看更多</a>)。</li>
+<li><strong>FTL 标签</strong>：FTL标签和HTML标签很相似，但是它们却是给FreeMarker的指示， 而且不会打印在输出内容中。</li>
+<li><strong>注释</strong>：注释和HTML的注释也很相似，但它们是由 <code>&lt;#--</code> 和 <code>--&gt;</code>来分隔的。注释会被FreeMarker直接忽略， 更不会在输出内容中显示。</li>
+</ul>
+<p>请注意非常重要的几点：<br>插值 仅仅可以在 文本 中使用。 (也可以是字符串表达式；请参考 <a target="_blank" rel="noopener" href="http://www.kerneler.com/freemarker2.3.23/dgui_template_exp.html#dgui_template_exp_stringop_interpolation">后续内容</a>)<br>FTL 标签 不可以在其他 FTL 标签 和 插值中使用。比如， 这样做是 <em>错误</em> 的： <code>&lt;#if &lt;#include &#39;foo&#39;&gt;=&#39;bar&#39;&gt;...&lt;/#if&gt;</code><br>注释 可以放在 FTL 标签 和 插值中。</p>
+<h3 id="FTL标签"><a href="#FTL标签" class="headerlink" title="FTL标签"></a>FTL标签</h3>
                 
               </div>
             
@@ -409,8 +346,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Oracle用户角色权限基本操作</div>
-      <div>http://messiahnb.github.io/2022/12/05/Oracle用户角色权限基本操作/</div>
+      <div>FreeMarker基础</div>
+      <div>http://messiahnb.github.io/2023/01/30/FreeMarker基础/</div>
     </div>
     <div class="license-meta">
       
@@ -422,7 +359,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年12月5日</div>
+          <div>2023年1月30日</div>
         </div>
       
       
@@ -452,18 +389,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/01/30/FreeMarker%E5%9F%BA%E7%A1%80/" title="FreeMarker基础">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">FreeMarker基础</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/08/29/VUE3%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B/" title="VUE3快速上手">
-                        <span class="hidden-mobile">VUE3快速上手</span>
+                      <a href="/2022/12/05/Oracle%E7%94%A8%E6%88%B7%E8%A7%92%E8%89%B2%E6%9D%83%E9%99%90%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/" title="Oracle用户角色权限基本操作">
+                        <span class="hidden-mobile">Oracle用户角色权限基本操作</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
