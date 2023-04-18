@@ -23,12 +23,12 @@
 <meta property="og:site_name" content="Messiah">
 <meta property="og:description" content="NPM与PNPMNPM简介NPM是个干嘛的？​	npm是node.js的包管理工具，用来解决Node.js代码部署问题。在安装Node.js时会自动安装相应的npm版本,不需要单独安装。使用npm包管理工具可以解决如下场景的需求。  从npm服务器下载别人编写的第三方包到本地使用。 从npm服务器下载并安装别人编写的命令程序到本地使用。 将自己编写的包或命令行程序上传到npm服务器供别人使用。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/b1bf125342e04fc7a577e8be2dd5ab35.png">
+<meta property="og:image" content="c:/Users/messiah/AppData/Roaming/Typora/typora-user-images/image-20230418225820418.png">
 <meta property="article:published_time" content="2023-04-18T14:37:59.000Z">
-<meta property="article:modified_time" content="2023-04-18T14:39:03.016Z">
+<meta property="article:modified_time" content="2023-04-18T14:58:47.145Z">
 <meta property="article:author" content="Messiah">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://img-blog.csdnimg.cn/b1bf125342e04fc7a577e8be2dd5ab35.png">
+<meta name="twitter:image" content="c:/Users/messiah/AppData/Roaming/Typora/typora-user-images/image-20230418225820418.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
@@ -294,7 +294,7 @@
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2023-04-18 22:39:03
+                    本文最后更新于：2023-04-18 22:58:47
                   
                 
               </p>
@@ -334,7 +334,7 @@
 <p>​	pnpm依赖策略：消除依赖提升、规范拓扑结构</p>
 <h3 id="安全"><a href="#安全" class="headerlink" title="安全"></a>安全</h3><p>​	之前在使用 npm&#x2F;yarn 的时候，由于 node_module 的扁平结构，如果 A 依赖 B， B 依赖 C，那么 A 当中是可以直接使用 C 的，但问题是 A 当中并没有声明 C 这个依赖。因此会出现这种非法访问的情况。 但 pnpm 自创了一套依赖管理方式，很好地解决了这个问题，保证了安全性。</p>
 <h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>​	在我们使用<code>npm i pnpm -g</code>全局安装pnpm后，在vscode中使用pnpm相关的命令时打开可能会出现错误</p>
-<p><img src="https://img-blog.csdnimg.cn/b1bf125342e04fc7a577e8be2dd5ab35.png" srcset="/img/loading.gif" lazyload alt="错误信息"></p>
+<p><img src="C:\Users\messiah\AppData\Roaming\Typora\typora-user-images\image-20230418225820418.png" srcset="/img/loading.gif" lazyload alt="image-20230418225820418"></p>
 <p>​	解决办法 以管理员身份运行Windos PowerShell，运行 <code>set-ExecutionPolicy RemoteSigned</code> 指令，并且输入 Y ，即可</p>
 <h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><ol>
 <li><a target="_blank" rel="noopener" href="http://hz.itheima.com/news/20211012/175847.html">npm是什么意思？npm常用命令介绍 (itheima.com)</a></li>
