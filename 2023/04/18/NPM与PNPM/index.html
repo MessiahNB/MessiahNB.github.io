@@ -16,23 +16,25 @@
   <meta name="author" content="Messiah">
   <meta name="keywords" content="">
   
-    <meta name="description" content="正则表达式基本符号 []:字符组，允许匹配一组可能出现的字符。需要注意的是在这里中括号只能代表一个字符。 -：连字符，代表区间。 \：转义字符，对特殊字符（一般指的是正则中具有含义的字符，例如：-、^）进行匹配的时候需要用到转义字符。 ^：取反字符，一般用于字符组中来表示取反或者不包含，注意如果用在开头的话，表示匹配已什么开头。 $：指定的是一个字符串的结束，表示匹配以什么结尾。 .：字符代表匹配">
+    <meta name="description" content="NPM与PNPMNPM简介NPM是个干嘛的？​	npm是node.js的包管理工具，用来解决Node.js代码部署问题。在安装Node.js时会自动安装相应的npm版本,不需要单独安装。使用npm包管理工具可以解决如下场景的需求。  从npm服务器下载别人编写的第三方包到本地使用。 从npm服务器下载并安装别人编写的命令程序到本地使用。 将自己编写的包或命令行程序上传到npm服务器供别人使用。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="正则表达式基础">
-<meta property="og:url" content="http://messiahnb.github.io/2023/04/17/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:title" content="NPM与PNPM">
+<meta property="og:url" content="http://messiahnb.github.io/2023/04/18/NPM%E4%B8%8EPNPM/index.html">
 <meta property="og:site_name" content="Messiah">
-<meta property="og:description" content="正则表达式基本符号 []:字符组，允许匹配一组可能出现的字符。需要注意的是在这里中括号只能代表一个字符。 -：连字符，代表区间。 \：转义字符，对特殊字符（一般指的是正则中具有含义的字符，例如：-、^）进行匹配的时候需要用到转义字符。 ^：取反字符，一般用于字符组中来表示取反或者不包含，注意如果用在开头的话，表示匹配已什么开头。 $：指定的是一个字符串的结束，表示匹配以什么结尾。 .：字符代表匹配">
+<meta property="og:description" content="NPM与PNPMNPM简介NPM是个干嘛的？​	npm是node.js的包管理工具，用来解决Node.js代码部署问题。在安装Node.js时会自动安装相应的npm版本,不需要单独安装。使用npm包管理工具可以解决如下场景的需求。  从npm服务器下载别人编写的第三方包到本地使用。 从npm服务器下载并安装别人编写的命令程序到本地使用。 将自己编写的包或命令行程序上传到npm服务器供别人使用。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-04-17T08:40:12.000Z">
-<meta property="article:modified_time" content="2023-04-17T09:18:17.587Z">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/b1bf125342e04fc7a577e8be2dd5ab35.png">
+<meta property="article:published_time" content="2023-04-18T14:37:59.000Z">
+<meta property="article:modified_time" content="2023-04-18T14:39:03.016Z">
 <meta property="article:author" content="Messiah">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/b1bf125342e04fc7a577e8be2dd5ab35.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>正则表达式基础 - Messiah</title>
+  <title>NPM与PNPM - Messiah</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -197,7 +199,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="正则表达式基础"></span>
+            <span id="subtitle" data-typed-text="NPM与PNPM"></span>
           
         </div>
 
@@ -208,8 +210,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-04-17 16:40" pubdate>
-          2023-04-17 16:40:12
+        <time datetime="2023-04-18 22:37" pubdate>
+          2023-04-18 22:37:59
         </time>
       </span>
     
@@ -287,12 +289,12 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">正则表达式基础</h1>
+            <h1 style="display: none">NPM与PNPM</h1>
             
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2023-04-17 17:18:17
+                    本文最后更新于：2023-04-18 22:39:03
                   
                 
               </p>
@@ -300,35 +302,46 @@
             
               <div class="markdown-body">
                 
-                <h1 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h1><h2 id="基本符号"><a href="#基本符号" class="headerlink" title="基本符号"></a>基本符号</h2><ul>
-<li><code>[]</code>:字符组，允许匹配一组可能出现的字符。需要注意的是在这里中括号只能代表一个字符。</li>
-<li><code>-</code>：连字符，代表区间。</li>
-<li><code>\</code>：转义字符，对特殊字符（一般指的是正则中具有含义的字符，例如：<code>-</code>、<code>^</code>）进行匹配的时候需要用到转义字符。</li>
-<li><code>^</code>：取反字符，一般用于字符组中来表示取反或者不包含，注意如果用在开头的话，表示匹配已什么开头。</li>
-<li><code>$</code>：指定的是一个字符串的结束，表示匹配以什么结尾。</li>
-<li><code>.</code>：字符代表匹配任何单个字符，它<strong>只能出现在方括号以外</strong>。<strong>值得注意的是：</strong> <code>.</code>字符只有一个不能匹配的字符，也就是换行符（<code>\n</code>），不过要让<code>.</code>字符与换 行符匹配也是可以的，以后会讨论。</li>
-<li><code>?</code>：指定一个字符、字符组或其他基本单元可选，这意味着正则表达式引擎将会期望该字符出现<strong>零次或一次</strong>。</li>
-<li><code>&#123;N&#125;</code>：重复，在一个字符后加上<code>&#123;N&#125;</code>,就可以表示在它之前的字符出现N次。</li>
-<li><code>&#123;M,N&#125;</code>：重复区间，m是最少出现次数，n为最大出现次数。<code>\d&#123;3,4&#125;</code> 既可以匹配<code>3</code>个数字也可以匹配<code>4</code>个数字，不过当有<code>4</code>个数字的时候，优先匹配的是<code>4</code>个数字，这是因为正则表达式默认是<strong>贪婪模式</strong>，即尽可能的匹配更多字符，而要使用<strong>非贪婪模式</strong>，我们要在<strong>表达式后面加上 <code>?</code>号</strong>。</li>
-<li><code>&#123;M,&#125;</code>：开闭区间，表示匹配M个或者无数个。</li>
-<li><code>*</code>：匹配0次或多次，开闭区间的速写字符指定常见重复情况，<code>*</code>等价于<code>&#123;0,&#125;</code></li>
-<li><code>+</code>：匹配1次或多次，开闭区间的速写字符指定常见重复情况，<code>+</code>等价于<code>&#123;1,&#125;</code></li>
+                <h1 id="NPM与PNPM"><a href="#NPM与PNPM" class="headerlink" title="NPM与PNPM"></a>NPM与PNPM</h1><h2 id="NPM简介"><a href="#NPM简介" class="headerlink" title="NPM简介"></a>NPM简介</h2><h3 id="NPM是个干嘛的？"><a href="#NPM是个干嘛的？" class="headerlink" title="NPM是个干嘛的？"></a>NPM是个干嘛的？</h3><p>​	npm是node.js的包管理工具，用来解决Node.js代码部署问题。在安装Node.js时会自动安装相应的npm版本,不需要单独安装。使用npm包管理工具可以解决如下场景的需求。</p>
+<ol>
+<li>从npm服务器下载别人编写的第三方包到本地使用。</li>
+<li>从npm服务器下载并安装别人编写的命令程序到本地使用。</li>
+<li>将自己编写的包或命令行程序上传到npm服务器供别人使用。</li>
+</ol>
+<h3 id="NPM常用命令介绍"><a href="#NPM常用命令介绍" class="headerlink" title="NPM常用命令介绍"></a>NPM常用命令介绍</h3><p>​	npm提供了快速操作包的命令，只需要简单命令就可以很方便地对第三方包进行管理，下面列举了npm中的常用命令。</p>
+<ul>
+<li>npm install:安装项目所需要的全部包，需要配置 package.json文件。</li>
+<li>npm uninstall:卸载指定名称的包。</li>
+<li>npm install包名:安装指定名称的包，后面可以跟参数“-g”表示全局安装“–save表示本地安装。注意不带参数默认本地安装。</li>
+<li>npm update:更新指定名称的包。</li>
+<li>npm start:项目启动;通过CDN方式引入 Vue，可以缓解服务器的压力，加快文件的下载速度。目前，网络上有很多免费的CDN服务器可以使用。</li>
+<li>npm run build:项目构建。</li>
 </ul>
-<h2 id="特殊符号组合"><a href="#特殊符号组合" class="headerlink" title="特殊符号组合"></a>特殊符号组合</h2><ul>
-<li><code>\w</code>：与任意单词字符匹配，任意单词字符表示 <code>[A-Z]</code>、 <code>[a-z]</code>、<code>[0-9]</code>、<code>_</code>,匹配包括下划线的任何单词字符。等价于<code>[A-Za-z0-9_]</code>。</li>
-<li><code>\W</code>：匹配任何非单词字符。等价于<code>[^A-Za-z0-9_]</code></li>
-<li><code>\d</code>：与任意数字匹配。匹配一个数字字符。等价于 <code>[0-9]</code>。</li>
-<li><code>\D</code>：匹配一个非数字字符。等价于 <code>[^0-9]</code></li>
-<li><code>\s</code>：快捷方式可以<strong>匹配空白字符</strong>，比如空格，tab、换行等。匹配任何空白字符，包括空格、制表符、换页符等等。等价于 <code>[ \f\n\r\t\v]</code>。</li>
-<li><code>\S</code>：匹配任何非空白字符。等价于 <code>[^ \f\n\r\t\]</code>。</li>
-<li><code>\b</code> ：匹配的是单词的边界</li>
-</ul>
-<h2 id="预查符号"><a href="#预查符号" class="headerlink" title="预查符号"></a>预查符号</h2><ul>
-<li><code>(?=pattern)</code>：正向否定预查(negative assert)，在任何不匹配pattern的字符串开始处匹配查找字符串。这是一个非获取匹配，也就是说，该匹配不需要获取供以后使用。例如”Windows(?!95|98|NT|2000)”能匹配”Windows3.1”中的”Windows”，但不能匹配”Windows2000”中的”Windows”。预查不消耗字符，也就是说，在一个匹配发生后，在最后一次匹配之后立即开始下一次匹配的搜索，而不是从包含预查的字符之后开始。**<code>xxx(?=pattern)</code>匹配符合pattern之前出现的数据**</li>
-<li><code>(?!pattern)</code>：正向否定预查(negative assert)，在任何不匹配pattern的字符串开始处匹配查找字符串。这是一个非获取匹配，也就是说，该匹配不需要获取供以后使用。例如”Windows(?!95|98|NT|2000)”能匹配”Windows3.1”中的”Windows”，但不能匹配”Windows2000”中的”Windows”。预查不消耗字符，也就是说，在一个匹配发生后，在最后一次匹配之后立即开始下一次匹配的搜索，而不是从包含预查的字符之后开始。**<code>xxx(?!pattern)</code>不匹配pattern之前出现的数据**</li>
-<li><code>(?&lt;=pattern)</code>：反向(look behind)肯定预查，与正向肯定预查类似，只是方向相反。例如，”<code>(?&lt;=95|98|NT|2000)Windows</code>“能匹配”<code>2000Windows</code>“中的”<code>Windows</code>“，但不能匹配”<code>3.1Windows</code>“中的”<code>Windows</code>“。**<code>(?&lt;=pattern)xxxx</code>匹配符合pattern之后出现的数据**</li>
-<li><code>(?&lt;!pattern)</code>：反向否定预查，与正向否定预查类似，只是方向相反。例如”<code>(?&lt;!95|98|NT|2000)Windows</code>“能匹配”<code>3.1Windows</code>“中的”<code>Windows</code>“，但不能匹配”<code>2000Windows</code>“中的”<code>Windows</code>“。**<code>(?&lt;!pattern)xxx</code>不匹配符合pattern之后出现的数据**</li>
-</ul>
+<p>由于npm的服务器在国外，使用npm下载软件包的速度非常慢，为了提高下载速度，推荐读者切换成国内的镜像服务器来使用。以淘宝NPM镜像为例,使用如下命令设置即可切换。</p>
+<p>由于npm的服务器在国外，使用npm下载软件包的速度非常慢，为了提高下载速度，推荐读者切换成国内的镜像服务器来使用。以淘宝NPM镜像为例,使用如下命令设置即可切换。</p>
+<p>由于npm的服务器在国外，使用npm下载软件包的速度非常慢，为了提高下载速度，推荐读者切换成国内的镜像服务器来使用。以淘宝NPM镜像为例,使用如下命令设置即可切换。</p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs arduino">npm config set registry https:<span class="hljs-comment">//registry.npm.taobao.org</span><br></code></pre></td></tr></table></figure>
+
+<p>当然也可以直接使用淘宝的npm镜像源，淘宝 NPM 镜像是一个完整 npmjs.org 镜像，你可以用此代替官方版本(只读)，同步频率目前为 10分钟 一次以保证尽量与官方服务同步。</p>
+<p>你可以使用淘宝定制的 cnpm (gzip 压缩支持) 命令行工具代替默认的 npm:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js">npm install -g cnpm --registry=<span class="hljs-attr">https</span>:<span class="hljs-comment">//registry.npmmirror.com</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="PNPM简介"><a href="#PNPM简介" class="headerlink" title="PNPM简介"></a>PNPM简介</h2><h3 id="PNPM概念"><a href="#PNPM概念" class="headerlink" title="PNPM概念"></a>PNPM概念</h3><p>​	performant npm ，意味“高性能的 npm”。<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=pnpm&spm=1001.2101.3001.7020">pnpm</a>由npm&#x2F;yarn衍生而来，解决了npm&#x2F;yarn内部潜在的bug，极大的优化了性能，扩展了使用场景。被誉为“最先进的包管理工具”</p>
+<h3 id="PNPM特点"><a href="#PNPM特点" class="headerlink" title="PNPM特点"></a>PNPM特点</h3><p>​	速度快、节约磁盘空间、支持monorepo、安全性高</p>
+<p>​	pnpm 相比较于 yarn&#x2F;npm 这两个常用的包管理工具在性能上也有了极大的提升，根据目前官方提供的 <a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=benchmark&spm=1001.2101.3001.7020">benchmark</a> 数据可以看出在一些综合场景下比 npm&#x2F;yarn 快了大概两倍。</p>
+<h3 id="存储管理"><a href="#存储管理" class="headerlink" title="存储管理"></a>存储管理</h3><p>​	按内容寻址、采用symlink</p>
+<h3 id="依赖管理"><a href="#依赖管理" class="headerlink" title="依赖管理"></a>依赖管理</h3><p>​	npm1、npm2采用递归管理，npm3、npm3+、yarn依赖扁平化管理消除依赖提升。</p>
+<p>​	pnpm依赖策略：消除依赖提升、规范拓扑结构</p>
+<h3 id="安全"><a href="#安全" class="headerlink" title="安全"></a>安全</h3><p>​	之前在使用 npm&#x2F;yarn 的时候，由于 node_module 的扁平结构，如果 A 依赖 B， B 依赖 C，那么 A 当中是可以直接使用 C 的，但问题是 A 当中并没有声明 C 这个依赖。因此会出现这种非法访问的情况。 但 pnpm 自创了一套依赖管理方式，很好地解决了这个问题，保证了安全性。</p>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>​	在我们使用<code>npm i pnpm -g</code>全局安装pnpm后，在vscode中使用pnpm相关的命令时打开可能会出现错误</p>
+<p><img src="https://img-blog.csdnimg.cn/b1bf125342e04fc7a577e8be2dd5ab35.png" srcset="/img/loading.gif" lazyload alt="错误信息"></p>
+<p>​	解决办法 以管理员身份运行Windos PowerShell，运行 <code>set-ExecutionPolicy RemoteSigned</code> 指令，并且输入 Y ，即可</p>
+<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><ol>
+<li><a target="_blank" rel="noopener" href="http://hz.itheima.com/news/20211012/175847.html">npm是什么意思？npm常用命令介绍 (itheima.com)</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_60409964/article/details/129525662">(123条消息) 安装 pnpm 出现 : 无法加载文件 D:\node\node_global\pnpm.ps1，因为在此系统上禁止运行脚本。有关详细信息，请参阅 https:&#x2F;go.microsoft. 解决办法_前端_奇点的博客-CSDN博客</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/snowball_li/article/details/124787870">(123条消息) pnpm：简介_snow@li的博客-CSDN博客</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/6c695a0692e0">JavaScript常见面试题：npm跟pnpm有什么区别？ - 简书 (jianshu.com)</a></li>
+</ol>
 
                 
               </div>
@@ -346,8 +359,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>正则表达式基础</div>
-      <div>http://messiahnb.github.io/2023/04/17/正则表达式基础/</div>
+      <div>NPM与PNPM</div>
+      <div>http://messiahnb.github.io/2023/04/18/NPM与PNPM/</div>
     </div>
     <div class="license-meta">
       
@@ -359,7 +372,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年4月17日</div>
+          <div>2023年4月18日</div>
         </div>
       
       
@@ -389,18 +402,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/04/18/NPM%E4%B8%8EPNPM/" title="NPM与PNPM">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">NPM与PNPM</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/02/07/Springboot%E6%95%B4%E5%90%88websocket%E5%9F%BA%E7%A1%80%E7%89%88/" title="Springboot整合websocket基础版">
-                        <span class="hidden-mobile">Springboot整合websocket基础版</span>
+                      <a href="/2023/04/17/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%9F%BA%E7%A1%80/" title="正则表达式基础">
+                        <span class="hidden-mobile">正则表达式基础</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
