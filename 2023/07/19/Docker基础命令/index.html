@@ -16,25 +16,23 @@
   <meta name="author" content="Messiah">
   <meta name="keywords" content="">
   
-    <meta name="description" content="NPM与PNPMNPM简介NPM是个干嘛的？​	npm是node.js的包管理工具，用来解决Node.js代码部署问题。在安装Node.js时会自动安装相应的npm版本,不需要单独安装。使用npm包管理工具可以解决如下场景的需求。  从npm服务器下载别人编写的第三方包到本地使用。 从npm服务器下载并安装别人编写的命令程序到本地使用。 将自己编写的包或命令行程序上传到npm服务器供别人使用。">
+    <meta name="description" content="Docker 基本操作常用命令 sndo systemctl start docker 启动docker sudo systemctl status docker 查看docker状态 sudo systemctl restart docker 重启docker sudo systemctl stop docker 停止docker docker version 查看docker的版本号 dock">
 <meta property="og:type" content="article">
-<meta property="og:title" content="NPM与PNPM">
-<meta property="og:url" content="http://messiahnb.github.io/2023/04/18/NPM%E4%B8%8EPNPM/index.html">
+<meta property="og:title" content="Docker基础命令">
+<meta property="og:url" content="http://messiahnb.github.io/2023/07/19/Docker%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/index.html">
 <meta property="og:site_name" content="Messiah">
-<meta property="og:description" content="NPM与PNPMNPM简介NPM是个干嘛的？​	npm是node.js的包管理工具，用来解决Node.js代码部署问题。在安装Node.js时会自动安装相应的npm版本,不需要单独安装。使用npm包管理工具可以解决如下场景的需求。  从npm服务器下载别人编写的第三方包到本地使用。 从npm服务器下载并安装别人编写的命令程序到本地使用。 将自己编写的包或命令行程序上传到npm服务器供别人使用。">
+<meta property="og:description" content="Docker 基本操作常用命令 sndo systemctl start docker 启动docker sudo systemctl status docker 查看docker状态 sudo systemctl restart docker 重启docker sudo systemctl stop docker 停止docker docker version 查看docker的版本号 dock">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://messiahnb.github.io/images/image-20230418225820418.png">
-<meta property="article:published_time" content="2023-04-18T14:37:59.000Z">
-<meta property="article:modified_time" content="2023-04-18T15:33:56.704Z">
+<meta property="article:published_time" content="2023-07-18T16:50:18.000Z">
+<meta property="article:modified_time" content="2023-07-18T16:51:17.658Z">
 <meta property="article:author" content="Messiah">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://messiahnb.github.io/images/image-20230418225820418.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>NPM与PNPM - Messiah</title>
+  <title>Docker基础命令 - Messiah</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -199,7 +197,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="NPM与PNPM"></span>
+            <span id="subtitle" data-typed-text="Docker基础命令"></span>
           
         </div>
 
@@ -210,8 +208,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-04-18 22:37" pubdate>
-          2023-04-18 22:37:59
+        <time datetime="2023-07-19 00:50" pubdate>
+          2023-07-19 00:50:18
         </time>
       </span>
     
@@ -222,7 +220,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.8k 字
+          2.4k 字
         
       </span>
     
@@ -233,7 +231,7 @@
         
         
         
-          16 分钟
+          20 分钟
         
       </span>
     
@@ -289,12 +287,12 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">NPM与PNPM</h1>
+            <h1 style="display: none">Docker基础命令</h1>
             
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2023-04-18 23:33:56
+                    本文最后更新于：2023-07-19 00:51:17
                   
                 
               </p>
@@ -302,46 +300,94 @@
             
               <div class="markdown-body">
                 
-                <h1 id="NPM与PNPM"><a href="#NPM与PNPM" class="headerlink" title="NPM与PNPM"></a>NPM与PNPM</h1><h2 id="NPM简介"><a href="#NPM简介" class="headerlink" title="NPM简介"></a>NPM简介</h2><h3 id="NPM是个干嘛的？"><a href="#NPM是个干嘛的？" class="headerlink" title="NPM是个干嘛的？"></a>NPM是个干嘛的？</h3><p>​	npm是node.js的包管理工具，用来解决Node.js代码部署问题。在安装Node.js时会自动安装相应的npm版本,不需要单独安装。使用npm包管理工具可以解决如下场景的需求。</p>
-<ol>
-<li>从npm服务器下载别人编写的第三方包到本地使用。</li>
-<li>从npm服务器下载并安装别人编写的命令程序到本地使用。</li>
-<li>将自己编写的包或命令行程序上传到npm服务器供别人使用。</li>
-</ol>
-<h3 id="NPM常用命令介绍"><a href="#NPM常用命令介绍" class="headerlink" title="NPM常用命令介绍"></a>NPM常用命令介绍</h3><p>​	npm提供了快速操作包的命令，只需要简单命令就可以很方便地对第三方包进行管理，下面列举了npm中的常用命令。</p>
-<ul>
-<li>npm install:安装项目所需要的全部包，需要配置 package.json文件。</li>
-<li>npm uninstall:卸载指定名称的包。</li>
-<li>npm install包名:安装指定名称的包，后面可以跟参数“-g”表示全局安装“–save表示本地安装。注意不带参数默认本地安装。</li>
-<li>npm update:更新指定名称的包。</li>
-<li>npm start:项目启动;通过CDN方式引入 Vue，可以缓解服务器的压力，加快文件的下载速度。目前，网络上有很多免费的CDN服务器可以使用。</li>
-<li>npm run build:项目构建。</li>
+                <h1 id="Docker-基本操作"><a href="#Docker-基本操作" class="headerlink" title="Docker 基本操作"></a>Docker 基本操作</h1><h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><ul>
+<li><code>sndo systemctl start docker</code> 启动docker</li>
+<li><code>sudo systemctl status docker</code> 查看docker状态</li>
+<li><code>sudo systemctl restart docker</code> 重启docker</li>
+<li><code>sudo systemctl stop docker</code> 停止docker</li>
+<li><code>docker version</code> 查看docker的版本号</li>
+<li><code>docker pull 应用镜像名:版本号</code> 在镜像仓库下载镜像</li>
+<li><code>docker images</code> 查出当前docker所有镜像（包含下载镜像与自己创建的镜像）</li>
+<li><code>docker rmi 镜像tag/id</code> 删除镜像 这里面还有说法。。。 docker rmi -f 强制删除、</li>
 </ul>
-<p>由于npm的服务器在国外，使用npm下载软件包的速度非常慢，为了提高下载速度，推荐读者切换成国内的镜像服务器来使用。以淘宝NPM镜像为例,使用如下命令设置即可切换。</p>
-<p>由于npm的服务器在国外，使用npm下载软件包的速度非常慢，为了提高下载速度，推荐读者切换成国内的镜像服务器来使用。以淘宝NPM镜像为例,使用如下命令设置即可切换。</p>
-<p>由于npm的服务器在国外，使用npm下载软件包的速度非常慢，为了提高下载速度，推荐读者切换成国内的镜像服务器来使用。以淘宝NPM镜像为例,使用如下命令设置即可切换。</p>
-<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs arduino">npm config set registry https:<span class="hljs-comment">//registry.npm.taobao.org</span><br></code></pre></td></tr></table></figure>
-
-<p>当然也可以直接使用淘宝的npm镜像源，淘宝 NPM 镜像是一个完整 npmjs.org 镜像，你可以用此代替官方版本(只读)，同步频率目前为 10分钟 一次以保证尽量与官方服务同步。</p>
-<p>你可以使用淘宝定制的 cnpm (gzip 压缩支持) 命令行工具代替默认的 npm:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js">npm install -g cnpm --registry=<span class="hljs-attr">https</span>:<span class="hljs-comment">//registry.npmmirror.com</span><br></code></pre></td></tr></table></figure>
-
-<h2 id="PNPM简介"><a href="#PNPM简介" class="headerlink" title="PNPM简介"></a>PNPM简介</h2><h3 id="PNPM概念"><a href="#PNPM概念" class="headerlink" title="PNPM概念"></a>PNPM概念</h3><p>​	performant npm ，意味“高性能的 npm”。<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=pnpm&spm=1001.2101.3001.7020">pnpm</a>由npm&#x2F;yarn衍生而来，解决了npm&#x2F;yarn内部潜在的bug，极大的优化了性能，扩展了使用场景。被誉为“最先进的包管理工具”</p>
-<h3 id="PNPM特点"><a href="#PNPM特点" class="headerlink" title="PNPM特点"></a>PNPM特点</h3><p>​	速度快、节约磁盘空间、支持monorepo、安全性高</p>
-<p>​	pnpm 相比较于 yarn&#x2F;npm 这两个常用的包管理工具在性能上也有了极大的提升，根据目前官方提供的 <a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=benchmark&spm=1001.2101.3001.7020">benchmark</a> 数据可以看出在一些综合场景下比 npm&#x2F;yarn 快了大概两倍。</p>
-<h3 id="存储管理"><a href="#存储管理" class="headerlink" title="存储管理"></a>存储管理</h3><p>​	按内容寻址、采用symlink</p>
-<h3 id="依赖管理"><a href="#依赖管理" class="headerlink" title="依赖管理"></a>依赖管理</h3><p>​	npm1、npm2采用递归管理，npm3、npm3+、yarn依赖扁平化管理消除依赖提升。</p>
-<p>​	pnpm依赖策略：消除依赖提升、规范拓扑结构</p>
-<h3 id="安全"><a href="#安全" class="headerlink" title="安全"></a>安全</h3><p>​	之前在使用 npm&#x2F;yarn 的时候，由于 node_module 的扁平结构，如果 A 依赖 B， B 依赖 C，那么 A 当中是可以直接使用 C 的，但问题是 A 当中并没有声明 C 这个依赖。因此会出现这种非法访问的情况。 但 pnpm 自创了一套依赖管理方式，很好地解决了这个问题，保证了安全性。</p>
-<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>​	在我们使用<code>npm i pnpm -g</code>全局安装pnpm后，在vscode中使用pnpm相关的命令时打开可能会出现错误</p>
-<p><img src="/images/image-20230418225820418.png" srcset="/img/loading.gif" lazyload></p>
-<p>​	解决办法 以管理员身份运行Windos PowerShell，运行 <code>set-ExecutionPolicy RemoteSigned</code> 指令，并且输入 Y ，即可</p>
-<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><ol>
-<li><a target="_blank" rel="noopener" href="http://hz.itheima.com/news/20211012/175847.html">npm是什么意思？npm常用命令介绍 (itheima.com)</a></li>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_60409964/article/details/129525662">(123条消息) 安装 pnpm 出现 : 无法加载文件 D:\node\node_global\pnpm.ps1，因为在此系统上禁止运行脚本。有关详细信息，请参阅 https:&#x2F;go.microsoft. 解决办法_前端_奇点的博客-CSDN博客</a></li>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/snowball_li/article/details/124787870">(123条消息) pnpm：简介_snow@li的博客-CSDN博客</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/6c695a0692e0">JavaScript常见面试题：npm跟pnpm有什么区别？ - 简书 (jianshu.com)</a></li>
+<p>批量删除镜像的两种方式</p>
+<ol>
+<li><p>使用$() 表达式进行删除</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">docker rmi -f $(docker images -qa)<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>使用xargs</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker images -q | xargs docker rmi -f<br></code></pre></td></tr></table></figure></li>
 </ol>
+<ul>
+<li><code>docker save -o 导出的tar文件名 仓库:标签名</code> 导出镜像</li>
+<li><code>docker load -i xx.tar</code> 导入镜像</li>
+<li><code>docker image prune</code> 清理镜像</li>
+</ul>
+<h2 id="容器命令"><a href="#容器命令" class="headerlink" title="容器命令"></a>容器命令</h2><ul>
+<li><p><code>docker ps</code>  列出正在运行的Docker容器</p>
+</li>
+<li><p><code>docker run 镜像tag</code> 启动镜像创建容器，在docker中容器的启动方式有两种 一种是：交互式启动 一种是：后台启动</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker run -it -p 8090:80 --name my-nginx nginx /bin/bash<br>参数解释：<br>-i ：在容器中指定一个终端。<br>-t：允许我们对容器的终端进行输出或输出<br>– name 为启动的容器设置名称<br>-p ：port（宿主机）+port（容器内）<br>bin/bash指定终端交互的shell解释器<br><br>docker run -d -p 8090:80 --name my-nginx nginx <br>参数解释：<br>-d 后台运行<br>-p ：port（宿主机）+port（容器内）<br>– name 为启动的容器设置名称<br>最后一个nginx代表的nginx:latest 镜像，默认latest可以进行省略。<br></code></pre></td></tr></table></figure>
+</li>
+<li><p><code>docker exec -it 容器id/容器名称  /bin/bash</code>  进入一个正在运行的容器</p>
+<p>进入容器后退出容器 有两种方式 1 直接输入 exit 退出容器并停止容器 2 快捷键 ctrl + p +q 退出容器但不停止容器运行</p>
+</li>
+<li><p><code>docker start 容器名称或容器ID</code> 启动一个已停止的容器</p>
+</li>
+<li><p><code>docker stop 容器名称或容器ID</code> 停止容器</p>
+</li>
+<li><p><code>docker restart 容器名称或容器ID</code> 重新启动一个已停止的容器</p>
+</li>
+<li><p><code>docker rm -f 容器名称或容器id</code> 删除容器，其中-f为强制删除</p>
+</li>
+<li><p>导出容器</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">方式一： docker <span class="hljs-built_in">export</span> -o xx.tar 容器名称或容器<span class="hljs-built_in">id</span><br>方式二：docker <span class="hljs-built_in">export</span> 容器名称或容器<span class="hljs-built_in">id</span> &gt; xx.tar<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>导入容器</p>
+<figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-title">docker</span> <span class="hljs-keyword">import</span> xx.tar REPOSITORY:TAG<br></code></pre></td></tr></table></figure>
+</li>
+<li><p><code>docker top 容器id或容器名称</code>  查看容器进程</p>
+</li>
+<li><p><code>docker stats 容器id或容器名称</code> 查看容器内CPU、内存、存储或网络信息</p>
+</li>
+<li><p><code>docker inspect 容器id或容器名称</code> 查看容器详情</p>
+</li>
+<li><p><code>docker cp 容器id或容器名:容器中文件路径 主机路径</code>   复制容器文件到主机</p>
+</li>
+<li><p><code>docker cp 主机文件路径 容器id或容器名:容器中文件路径</code>  拷贝主机的文件到容器中</p>
+</li>
+<li><p><code>docker diff 容器id或容器名称</code> diff 看容器内文件系统的变更 类似与操作日志</p>
+</li>
+<li><p><code>docker port 容器id或容器名称</code>  <strong>查看容器占用端口信息</strong></p>
+</li>
+<li><p><code>docker logs --tail 10 容器id或容器名称</code>  查看容器最后十条日志记录</p>
+</li>
+<li><p><code>docker build -t 镜像名称:tag .</code>   将当前目录作为（软件包）构建上下文，并根据dockerfile构建生成一个镜像文件</p>
+</li>
+</ul>
+<p>要在Docker中运行前端项目，可以按照以下步骤进行操作：</p>
+<ol>
+<li>创建 Dockerfile：在项目的根目录中创建一个名为 Dockerfile 的文件，该文件用于定义 Docker 镜像的构建方式。可以使用文本编辑器打开 Dockerfile 文件，并将以下内容复制粘贴进去：</li>
+</ol>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs Dockerfile"><span class="hljs-comment"># 指定基础镜像</span><br><span class="hljs-keyword">FROM</span> nginx:latest<br><br><span class="hljs-comment"># 将本地的 HTML、CSS 和 JavaScript 文件复制到容器中的指定目录</span><br><span class="hljs-keyword">COPY</span><span class="language-bash"> . /usr/share/nginx/html</span><br><br><span class="hljs-comment"># 指定容器对外暴露的端口号</span><br><span class="hljs-keyword">EXPOSE</span> <span class="hljs-number">80</span><br><br><span class="hljs-comment"># 容器启动时运行的命令</span><br><span class="hljs-keyword">CMD</span><span class="language-bash"> [<span class="hljs-string">&quot;nginx&quot;</span>, <span class="hljs-string">&quot;-g&quot;</span>, <span class="hljs-string">&quot;daemon off;&quot;</span>]</span><br></code></pre></td></tr></table></figure>
+
+<p>上述 Dockerfile 使用 nginx 作为基础镜像，并将当前目录中的文件复制到容器中的 <code>/usr/share/nginx/html</code> 目录下。它还暴露了容器的 80 端口，并且通过 nginx 命令启动容器。</p>
+<ol>
+<li>构建 Docker 镜像：打开终端或命令行界面，进入到 Dockerfile 所在的目录，并执行以下命令来构建 Docker 镜像：</li>
+</ol>
+<figure class="highlight erlang"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs erlang">docker build -t your_image_name .<br></code></pre></td></tr></table></figure>
+
+<p>将 <code>your_image_name</code> 替换为你自己的镜像名称。注意，最后的命令中有一个点，表示使用当前目录作为构建上下文。</p>
+<ol>
+<li>运行 Docker 容器：构建完成后，可以使用以下命令运行 Docker 容器：</li>
+</ol>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">docker</span> run -d -p <span class="hljs-number">8080</span>:<span class="hljs-number">80</span> your_image_name<br></code></pre></td></tr></table></figure>
+
+<p>这将在容器内部的 80 端口上运行 nginx，并将容器的 80 端口映射到主机的 8080 端口。你可以根据需要修改端口映射。</p>
+<ol>
+<li>访问前端应用：在浏览器中访问 <code>http://localhost:8080</code>，即可查看运行在 Docker 容器中的前端应用。</li>
+</ol>
+<p>这样，你应该能够使用 Docker 运行你的前端项目。注意，上述步骤假设你的前端项目是一个静态网页应用。如果你的前端项目具有其他依赖项，如服务端接口或数据库，你可能需要在 Dockerfile 中添加更多配置来支持这些依赖项。</p>
 
                 
               </div>
@@ -359,8 +405,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>NPM与PNPM</div>
-      <div>http://messiahnb.github.io/2023/04/18/NPM与PNPM/</div>
+      <div>Docker基础命令</div>
+      <div>http://messiahnb.github.io/2023/07/19/Docker基础命令/</div>
     </div>
     <div class="license-meta">
       
@@ -372,7 +418,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年4月18日</div>
+          <div>2023年7月19日</div>
         </div>
       
       
@@ -402,18 +448,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/07/19/Docker%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/" title="Docker基础命令">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Docker基础命令</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/04/17/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%9F%BA%E7%A1%80/" title="正则表达式基础">
-                        <span class="hidden-mobile">正则表达式基础</span>
+                      <a href="/2023/04/18/NPM%E4%B8%8EPNPM/" title="NPM与PNPM">
+                        <span class="hidden-mobile">NPM与PNPM</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
