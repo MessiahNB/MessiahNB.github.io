@@ -16,13 +16,15 @@
   <meta name="author" content="Messiah">
   <meta name="keywords" content="">
   
-    <meta property="og:type" content="article">
+    <meta name="description" content="Centos 基础环境初始化12345678910111213141516171819202122232425262728# 更新阿里云yum源wget -0 &#x2F;etc&#x2F;yum.repos.d&#x2F;CentOS-Base.repo http:&#x2F;&#x2F;mirrors.aliyun,com&#x2F;repo&#x2F;Centos-7.repo  #基础仓库wget -0 &#x2F;etc&#x2F;yum.repos.d&#x2F;epel.repo">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Centos7环境配置">
 <meta property="og:url" content="http://messiahnb.github.io/2024/01/17/Centos7%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/index.html">
 <meta property="og:site_name" content="Messiah">
+<meta property="og:description" content="Centos 基础环境初始化12345678910111213141516171819202122232425262728# 更新阿里云yum源wget -0 &#x2F;etc&#x2F;yum.repos.d&#x2F;CentOS-Base.repo http:&#x2F;&#x2F;mirrors.aliyun,com&#x2F;repo&#x2F;Centos-7.repo  #基础仓库wget -0 &#x2F;etc&#x2F;yum.repos.d&#x2F;epel.repo">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-01-17T13:18:02.000Z">
-<meta property="article:modified_time" content="2024-01-17T13:18:02.111Z">
+<meta property="article:modified_time" content="2024-01-17T13:28:04.038Z">
 <meta property="article:author" content="Messiah">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -218,7 +220,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          0 字
+          553 字
         
       </span>
     
@@ -229,7 +231,7 @@
         
         
         
-          1 分钟
+          5 分钟
         
       </span>
     
@@ -290,7 +292,7 @@
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2024-01-17 21:18:02
+                    本文最后更新于：2024-01-17 21:28:04
                   
                 
               </p>
@@ -298,7 +300,9 @@
             
               <div class="markdown-body">
                 
-                
+                <h2 id="Centos-基础环境初始化"><a href="#Centos-基础环境初始化" class="headerlink" title="Centos 基础环境初始化"></a>Centos 基础环境初始化</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">更新阿里云yum源</span><br>wget -0 /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun,com/repo/Centos-7.repo  #基础仓库<br>wget -0 /etc/yum.repos.d/epel.repo http://mirrors.aliyun.com/repo/epel-7.repo #额外的仓库<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">清空yum本地缓存</span><br>yum clean all<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">生成yum新的缓存</span><br>yum makecache<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">清空现有规则</span><br>iptables -F<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">确保是<span class="hljs-built_in">disable</span>的状态</span><br>getenforce <br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">常用功能组件 可装可不装</span><br>yum install -y bash-completion vim lrzsz wget expect net-tools nc nmap dos2unix htop iftop iotop unzip telnet sl psmic nethogs glances bc nptdate openldap-dev<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">禁止开机自启防火墙</span><br>systemctl disable firewalld<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">停止防火墙服务</span><br>systemctl stop firewalld <br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">查看linux内核版本</span><br>uname -r<br><br></code></pre></td></tr></table></figure>
+
+<h2 id=""><a href="#" class="headerlink" title=""></a></h2>
                 
               </div>
             
