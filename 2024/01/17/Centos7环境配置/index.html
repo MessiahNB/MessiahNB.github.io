@@ -24,7 +24,7 @@
 <meta property="og:description" content="Centos 基础环境初始化123456789101112131415161718192021222324252627# 更新阿里云yum源wget -0 &#x2F;etc&#x2F;yum.repos.d&#x2F;CentOS-Base.repo http:&#x2F;&#x2F;mirrors.aliyun,com&#x2F;repo&#x2F;Centos-7.repo  #基础仓库wget -0 &#x2F;etc&#x2F;yum.repos.d&#x2F;epel.repo ht">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-01-17T13:18:02.000Z">
-<meta property="article:modified_time" content="2024-01-18T12:24:49.406Z">
+<meta property="article:modified_time" content="2024-01-18T14:25:20.743Z">
 <meta property="article:author" content="Messiah">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -220,7 +220,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.2k 字
+          1.7k 字
         
       </span>
     
@@ -231,7 +231,7 @@
         
         
         
-          10 分钟
+          15 分钟
         
       </span>
     
@@ -292,7 +292,7 @@
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2024-01-18 20:24:49
+                    本文最后更新于：2024-01-18 22:25:20
                   
                 
               </p>
@@ -314,6 +314,19 @@
 <p>vim  &#x2F;etc&#x2F;profile</p>
 <p>ipaddr&#x3D;$(ifconfig eth0 | grep ‘inet ‘ | awk ‘{print $2}’)<br>sed -i ‘&#x2F;wslhost&#x2F;d’ &#x2F;mnt&#x2F;c&#x2F;Windows&#x2F;System32&#x2F;drivers&#x2F;etc&#x2F;hosts<br>echo “$ipaddr wslhost” &gt;&gt; &#x2F;mnt&#x2F;c&#x2F;Windows&#x2F;System32&#x2F;drivers&#x2F;etc&#x2F;hosts</p>
 </blockquote>
+<h2 id="防火墙相关操作"><a href="#防火墙相关操作" class="headerlink" title="防火墙相关操作"></a>防火墙相关操作</h2><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/yancool/p/16420171.html">Centos7关闭防火墙时：Failed to start firewalld.service: Unit not found. Unit firewalld.service could no</a></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs shell">解决方法步骤：<br>1、yum install firewalld<br>2、systemctl unmask firewalld<br>3、systemctl enable firewalld<br>4、systemctl start firewalld<br></code></pre></td></tr></table></figure>
+
+<ol>
+<li>查看防火墙状态。systemctl status firewalld</li>
+<li>开启&#x2F;关闭防火墙。systemctl start&#x2F;stop firewalld</li>
+<li>查看已安装防火墙规则。firewall-cmd –list-ports</li>
+<li>添加端口到防火墙上。firewall-cmd –add-port&#x3D;80&#x2F;tcp –permanent</li>
+<li>更新已设置的规则。firewall-cmd –reload</li>
+<li>移除端口。firewall-cmd –remove-port&#x3D;80&#x2F;tcp</li>
+<li>备份防火墙规则。firewall-cmd –set-default-strict&#x3D;false</li>
+<li>查询默认区域。systemctl get-default</li>
+</ol>
 
                 
               </div>
