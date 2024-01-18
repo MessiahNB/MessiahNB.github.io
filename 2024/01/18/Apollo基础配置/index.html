@@ -16,15 +16,15 @@
   <meta name="author" content="Messiah">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Centos 基础环境初始化123456789101112131415161718192021222324252627# 更新阿里云yum源wget -0 &#x2F;etc&#x2F;yum.repos.d&#x2F;CentOS-Base.repo http:&#x2F;&#x2F;mirrors.aliyun,com&#x2F;repo&#x2F;Centos-7.repo  #基础仓库wget -0 &#x2F;etc&#x2F;yum.repos.d&#x2F;epel.repo ht">
+    <meta name="description" content="Apollo基础配置 官方文档：Apollo (apolloconfig.com)  windows 本地服务端测试环境快速搭建 确保本地有对应版本的jdk环境和mysql环境，和git bash环境方便在windos上执行shell脚本  按照官方文档选择需要的apollo版本直接下载解压到本地，将sql文件夹中的sql在数据库先执行完毕，会创建两个数据库，分别为ApolloConfigDB，A">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Centos7环境配置">
-<meta property="og:url" content="http://messiahnb.github.io/2024/01/17/Centos7%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/index.html">
+<meta property="og:title" content="Apollo基础配置">
+<meta property="og:url" content="http://messiahnb.github.io/2024/01/18/Apollo%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE/index.html">
 <meta property="og:site_name" content="Messiah">
-<meta property="og:description" content="Centos 基础环境初始化123456789101112131415161718192021222324252627# 更新阿里云yum源wget -0 &#x2F;etc&#x2F;yum.repos.d&#x2F;CentOS-Base.repo http:&#x2F;&#x2F;mirrors.aliyun,com&#x2F;repo&#x2F;Centos-7.repo  #基础仓库wget -0 &#x2F;etc&#x2F;yum.repos.d&#x2F;epel.repo ht">
+<meta property="og:description" content="Apollo基础配置 官方文档：Apollo (apolloconfig.com)  windows 本地服务端测试环境快速搭建 确保本地有对应版本的jdk环境和mysql环境，和git bash环境方便在windos上执行shell脚本  按照官方文档选择需要的apollo版本直接下载解压到本地，将sql文件夹中的sql在数据库先执行完毕，会创建两个数据库，分别为ApolloConfigDB，A">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-01-17T13:18:02.000Z">
-<meta property="article:modified_time" content="2024-01-18T12:24:49.406Z">
+<meta property="article:published_time" content="2024-01-18T11:47:26.000Z">
+<meta property="article:modified_time" content="2024-01-18T11:56:20.512Z">
 <meta property="article:author" content="Messiah">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -32,7 +32,7 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>Centos7环境配置 - Messiah</title>
+  <title>Apollo基础配置 - Messiah</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -197,7 +197,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Centos7环境配置"></span>
+            <span id="subtitle" data-typed-text="Apollo基础配置"></span>
           
         </div>
 
@@ -208,8 +208,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-01-17 21:18" pubdate>
-          2024-01-17 21:18:02
+        <time datetime="2024-01-18 19:47" pubdate>
+          2024-01-18 19:47:26
         </time>
       </span>
     
@@ -220,7 +220,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.2k 字
+          2.2k 字
         
       </span>
     
@@ -231,7 +231,7 @@
         
         
         
-          10 分钟
+          19 分钟
         
       </span>
     
@@ -287,12 +287,12 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Centos7环境配置</h1>
+            <h1 style="display: none">Apollo基础配置</h1>
             
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2024-01-18 20:24:49
+                    本文最后更新于：2024-01-18 19:56:20
                   
                 
               </p>
@@ -300,20 +300,65 @@
             
               <div class="markdown-body">
                 
-                <h2 id="Centos-基础环境初始化"><a href="#Centos-基础环境初始化" class="headerlink" title="Centos 基础环境初始化"></a>Centos 基础环境初始化</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">更新阿里云yum源</span><br>wget -0 /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun,com/repo/Centos-7.repo  #基础仓库<br>wget -0 /etc/yum.repos.d/epel.repo http://mirrors.aliyun.com/repo/epel-7.repo #额外的仓库<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">清空yum本地缓存</span><br>yum clean all<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">生成yum新的缓存</span><br>yum makecache<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">清空现有规则</span><br>iptables -F<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">确保是<span class="hljs-built_in">disable</span>的状态</span><br>getenforce <br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">常用功能组件 可装可不装</span><br>yum install -y bash-completion vim lrzsz wget expect net-tools nc nmap dos2unix htop iftop iotop unzip telnet sl psmic nethogs glances bc nptdate openldap-dev<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">禁止开机自启防火墙</span><br>systemctl disable firewalld<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">停止防火墙服务</span><br>systemctl stop firewalld <br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">查看linux内核版本</span><br>uname -r<br></code></pre></td></tr></table></figure>
-
-<p>centos7 查看端口开放情况</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">firewall-cmd  --zone=public  --list-ports;<br></code></pre></td></tr></table></figure>
-
-<p>对于window子系统 wsl docker容器这种情况，如果想在window浏览器访问到wsl端口需要做一下配置</p>
-<blockquote>
-<p>在windows命令行中 需要进行端口流量转发</p>
-<p>netsh interface portproxy set v4tov4 listenaddress&#x3D;0.0.0.0 listenport&#x3D;43306 connectaddress&#x3D;wslhost connectport&#x3D;23306</p>
-<p>将window中请求43306的流量请求转发到 wsl子系统域名wslhost的 23306 端口上</p>
-<p>在wsl中设置一个本地host域名</p>
-<p>vim  &#x2F;etc&#x2F;profile</p>
-<p>ipaddr&#x3D;$(ifconfig eth0 | grep ‘inet ‘ | awk ‘{print $2}’)<br>sed -i ‘&#x2F;wslhost&#x2F;d’ &#x2F;mnt&#x2F;c&#x2F;Windows&#x2F;System32&#x2F;drivers&#x2F;etc&#x2F;hosts<br>echo “$ipaddr wslhost” &gt;&gt; &#x2F;mnt&#x2F;c&#x2F;Windows&#x2F;System32&#x2F;drivers&#x2F;etc&#x2F;hosts</p>
+                <h1 id="Apollo基础配置"><a href="#Apollo基础配置" class="headerlink" title="Apollo基础配置"></a>Apollo基础配置</h1><blockquote>
+<p>官方文档：<a target="_blank" rel="noopener" href="https://www.apolloconfig.com/#/zh/">Apollo (apolloconfig.com)</a></p>
 </blockquote>
+<h2 id="windows-本地服务端测试环境快速搭建"><a href="#windows-本地服务端测试环境快速搭建" class="headerlink" title="windows 本地服务端测试环境快速搭建"></a>windows 本地服务端测试环境快速搭建</h2><blockquote>
+<p>确保本地有对应版本的jdk环境和mysql环境，和git bash环境方便在windos上执行shell脚本</p>
+</blockquote>
+<p>按照官方文档选择需要的apollo版本直接下载解压到本地，将sql文件夹中的sql在数据库先执行完毕，会创建两个数据库，分别为ApolloConfigDB，ApolloPortalDB，打开编辑damo.sh 脚本，修改脚本文件中的数据库连接配置，然后再根目录打开git bash 执行demo.sh 脚本即可</p>
+<h2 id="docker-quick-start搭建服务端"><a href="#docker-quick-start搭建服务端" class="headerlink" title="docker quick-start搭建服务端"></a>docker quick-start搭建服务端</h2><blockquote>
+<p>准备docker环境</p>
+<p>准备好docker-compose.yml 容器启动配置文件，与建表sql文件都可以去官网下载</p>
+</blockquote>
+<p>在linux本机或者宿主机上 找一个位置创建docker-quick-start目录(名字随意)，并按照如下目录结构配置好</p>
+<blockquote>
+<p>–docker-quick-start</p>
+<p>​	–docker-compose.yml </p>
+<p>​	–sql</p>
+<p>​		–apolloconfigdb.sql</p>
+<p>​		–apolloportaldb.sql</p>
+</blockquote>
+<p>然后直接运行 <code>docker-compose up</code>命令</p>
+<p>如果报错找不到命令 直接<code>yum install docker-compose -y</code>安装后重新运行即可</p>
+<h2 id="客户端搭建"><a href="#客户端搭建" class="headerlink" title="客户端搭建"></a>客户端搭建</h2><p>本地springboot项目直接maven引入</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-comment">&lt;!--Apollo 客户端依赖--&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>com.ctrip.framework.apollo<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>apollo-client<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>1.7.0<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>配置文件中增加配置</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-comment"># apollo 配置中心</span><br><span class="hljs-attr">app:</span><br>  <span class="hljs-attr">id:</span> <span class="hljs-number">100002</span><br><span class="hljs-attr">apollo:</span><br>  <span class="hljs-attr">meta:</span> <span class="hljs-string">http://192.168.0.192:8080</span><br>  <span class="hljs-attr">bootstrap:</span><br>    <span class="hljs-attr">enabled:</span> <span class="hljs-literal">true</span><br>    <span class="hljs-attr">eagerLoad:</span><br>      <span class="hljs-attr">enabled:</span> <span class="hljs-literal">true</span><br>    <span class="hljs-comment"># 指定namespaces 不写默认application ，如果需要读取多个配置文件死，用逗号隔开</span><br>    <span class="hljs-attr">namespaces:</span> <span class="hljs-string">application</span><br></code></pre></td></tr></table></figure>
+
+<p>项目启动类添加注解@EnableApolloConfig即可</p>
+<p><code>apollo</code>支持<code>@Value</code>和<code>Environment</code>动态刷新，而对于<code>@ConfigurationProperties</code>，能加载到配置，但是无法自动刷新</p>
+<p>firewall-cmd  –zone&#x3D;public  –list-ports;Apollo基础配置</p>
+<blockquote>
+<p>官方文档：<a target="_blank" rel="noopener" href="https://www.apolloconfig.com/#/zh/">Apollo (apolloconfig.com)</a></p>
+</blockquote>
+<h2 id="windows-本地服务端测试环境快速搭建-1"><a href="#windows-本地服务端测试环境快速搭建-1" class="headerlink" title="windows 本地服务端测试环境快速搭建"></a>windows 本地服务端测试环境快速搭建</h2><blockquote>
+<p>确保本地有对应版本的jdk环境和mysql环境，和git bash环境方便在windos上执行shell脚本</p>
+</blockquote>
+<p>按照官方文档选择需要的apollo版本直接下载解压到本地，将sql文件夹中的sql在数据库先执行完毕，会创建两个数据库，分别为ApolloConfigDB，ApolloPortalDB，打开编辑damo.sh 脚本，修改脚本文件中的数据库连接配置，然后再根目录打开git bash 执行demo.sh 脚本即可</p>
+<h2 id="docker-quick-start搭建服务端-1"><a href="#docker-quick-start搭建服务端-1" class="headerlink" title="docker quick-start搭建服务端"></a>docker quick-start搭建服务端</h2><blockquote>
+<p>准备docker环境</p>
+<p>准备好docker-compose.yml 容器启动配置文件，与建表sql文件都可以去官网下载</p>
+</blockquote>
+<p>在linux本机或者宿主机上 找一个位置创建docker-quick-start目录(名字随意)，并按照如下目录结构配置好</p>
+<blockquote>
+<p>–docker-quick-start</p>
+<p>​	–docker-compose.yml </p>
+<p>​	–sql</p>
+<p>​		–apolloconfigdb.sql</p>
+<p>​		–apolloportaldb.sql</p>
+</blockquote>
+<p>然后直接运行 <code>docker-compose up</code>命令</p>
+<p>如果报错找不到命令 直接<code>yum install docker-compose -y</code>安装后重新运行即可</p>
+<h2 id="客户端搭建-1"><a href="#客户端搭建-1" class="headerlink" title="客户端搭建"></a>客户端搭建</h2><p>本地springboot项目直接maven引入</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-comment">&lt;!--Apollo 客户端依赖--&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>com.ctrip.framework.apollo<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>apollo-client<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>1.7.0<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>配置文件中增加配置</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-comment"># apollo 配置中心</span><br><span class="hljs-attr">app:</span><br>  <span class="hljs-attr">id:</span> <span class="hljs-number">100002</span><br><span class="hljs-attr">apollo:</span><br>  <span class="hljs-attr">meta:</span> <span class="hljs-string">http://192.168.0.192:8080</span><br>  <span class="hljs-attr">bootstrap:</span><br>    <span class="hljs-attr">enabled:</span> <span class="hljs-literal">true</span><br>    <span class="hljs-attr">eagerLoad:</span><br>      <span class="hljs-attr">enabled:</span> <span class="hljs-literal">true</span><br>    <span class="hljs-comment"># 指定namespaces 不写默认application ，如果需要读取多个配置文件死，用逗号隔开</span><br>    <span class="hljs-attr">namespaces:</span> <span class="hljs-string">application</span><br></code></pre></td></tr></table></figure>
+
+<p>项目启动类添加注解@EnableApolloConfig即可</p>
+<p><code>apollo</code>支持<code>@Value</code>和<code>Environment</code>动态刷新，而对于<code>@ConfigurationProperties</code>，能加载到配置，但是无法自动刷新</p>
 
                 
               </div>
@@ -331,8 +376,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Centos7环境配置</div>
-      <div>http://messiahnb.github.io/2024/01/17/Centos7环境配置/</div>
+      <div>Apollo基础配置</div>
+      <div>http://messiahnb.github.io/2024/01/18/Apollo基础配置/</div>
     </div>
     <div class="license-meta">
       
@@ -344,7 +389,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年1月17日</div>
+          <div>2024年1月18日</div>
         </div>
       
       
@@ -374,18 +419,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/01/18/Apollo%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE/" title="Apollo基础配置">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Apollo基础配置</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/07/19/Docker%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/" title="Docker基础命令">
-                        <span class="hidden-mobile">Docker基础命令</span>
+                      <a href="/2024/01/17/Centos7%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" title="Centos7环境配置">
+                        <span class="hidden-mobile">Centos7环境配置</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

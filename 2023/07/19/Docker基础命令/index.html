@@ -24,7 +24,7 @@
 <meta property="og:description" content="Docker 基本操作常用命令 sndo systemctl start docker 启动docker sudo systemctl status docker 查看docker状态 sudo systemctl restart docker 重启docker sudo systemctl stop docker 停止docker docker version 查看docker的版本号 dock">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-07-18T16:50:18.000Z">
-<meta property="article:modified_time" content="2024-01-17T14:33:40.875Z">
+<meta property="article:modified_time" content="2024-01-18T13:58:37.854Z">
 <meta property="article:author" content="Messiah">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -220,7 +220,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          5.4k 字
+          7.1k 字
         
       </span>
     
@@ -231,7 +231,7 @@
         
         
         
-          46 分钟
+          60 分钟
         
       </span>
     
@@ -292,7 +292,7 @@
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2024-01-17 22:33:40
+                    本文最后更新于：2024-01-18 21:58:37
                   
                 
               </p>
@@ -392,10 +392,23 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs shell">cat &lt;&lt;EOF &gt; /etc/sysctl.d/docker.conf<br>net.bridge.bridge-nf-call-ip6tables = 1<br>net.bridge.bridge-nf-call-iptables = 1<br>net.ipv4.conf.default.rp_filter = 0<br>net.ipv4.conf.all.rp_filter = 0<br>net.ipv4.ip_forward=1<br>EOF 	<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">加载修改内核的参数 配置文件</span><br>sysctl -p /etc/sysctl.d/docker.conf<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">如果报错文件找不到 就先执行这条指令</span><br>modprobe br_netfilter<br></code></pre></td></tr></table></figure>
 
 <p>利用yum快速安装docker</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">查看yum源中可用的docker版本</span> 	<br>yum list docker-ce --showduplicates | sort -r<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">提前配置好yum仓库</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">1.阿里云自带仓库 2.阿里云提供的docker专属repo仓库</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">利用curl 命令下载仓库文件</span><br>curl -o /etc/yum.repos.d/Centos-7.repo http://mirros.aliyun.com/repo/Centos-7.repo<br>curl -o /etc/yum.repos.d/docker-ce/repo http://mirros.aliyun.com/docker-ce/linux/centos/docker-ce.repo<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">更新yum缓存</span><br>yum clean all &amp;&amp; yum makecache<br></code></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">查看yum源中可用的docker版本</span> 	<br>yum list docker-ce --showduplicates | sort -r<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">提前配置好yum仓库</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">1.阿里云自带仓库 2.阿里云提供的docker专属repo仓库</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">利用curl 命令下载仓库文件</span><br>curl -o /etc/yum.repos.d/Centos-7.repo http://mirros.aliyun.com/repo/Centos-7.repo<br>curl -o /etc/yum.repos.d/docker-ce/repo http://mirros.aliyun.com/docker-ce/linux/centos/docker-ce.repo<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">更新yum缓存</span><br>yum clean all &amp;&amp; yum makecache<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">yum快速安装</span><br>yum install docker-ce-20.10.6 -y<br></code></pre></td></tr></table></figure>
 
 <p>配置docker镜像加速器 用于加速镜像文件的下载</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">创建deamon.json 文件</span><br>vim /etc/docker/deamon.json<br><span class="hljs-meta prompt_"># </span><span class="language-bash">写入一下内容</span><br>&#123;<br>&quot;registry-mirrors”: [&quot;https://8xpk5wnt .mirror.aliyuncs.com&quot;]<br>&#125;<br><span class="hljs-meta prompt_"># </span><span class="language-bash">重新读取deamon 配置文件</span><br>systemctl deamon-reload<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">设置docker开机自启动</span><br>systemctl enable docker<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">启动docker</span><br>system restart docker<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">验证是否启动</span><br>ps -ef|grep docker<br>[root@DESKTOP-9ES0CIB /]# ps -ef|grep docker<br>root       155     1  0 20:56 ?        00:00:01 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock<br>root       761   344  0 22:21 pts/0    00:00:00 grep --color=auto docker<br><br>[root@DESKTOP-9ES0CIB /]# docker version<br>Client: Docker Engine - Community<br> Version:           24.0.4<br> API version:       1.43<br> Go version:        go1.20.5<br> Git commit:        3713ee1<br> Built:             Fri Jul  7 14:54:21 2023<br> OS/Arch:           linux/amd64<br> Context:           default<br><br>Server: Docker Engine - Community<br> Engine:<br>  Version:          24.0.4<br>  API version:      1.43 (minimum version 1.12)<br>  Go version:       go1.20.5<br>  Git commit:       4ffc614<br>  Built:            Fri Jul  7 14:53:26 2023<br>  OS/Arch:          linux/amd64<br>  Experimental:     false<br> containerd:<br>  Version:          1.6.21<br>  GitCommit:        3dce8eb055cbb6872793272b4f20ed16117344f8<br> runc:<br>  Version:          1.1.7<br>  GitCommit:        v1.1.7-0-g860f061<br> docker-init:<br>  Version:          0.19.0<br>  GitCommit:        de40ad0<br><br></code></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">创建deamon.json 文件</span><br>vim /etc/docker/daemon.json<br><span class="hljs-meta prompt_"># </span><span class="language-bash">写入一下内容</span><br>&#123;<br>	&quot;registry-mirrors&quot;: [&quot;https://8xpk5wnt.mirror.aliyuncs.com&quot;]<br>&#125;<br><span class="hljs-meta prompt_"># </span><span class="language-bash">重新读取deamon 配置文件</span><br>systemctl daemon-reload<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">设置docker开机自启动</span><br>systemctl enable docker<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">启动docker</span><br>systemctl restart docker<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">验证是否启动</span><br>ps -ef|grep docker<br>[root@DESKTOP-9ES0CIB /]# ps -ef|grep docker<br>root       155     1  0 20:56 ?        00:00:01 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock<br>root       761   344  0 22:21 pts/0    00:00:00 grep --color=auto docker<br><br>[root@DESKTOP-9ES0CIB /]# docker version<br>Client: Docker Engine - Community<br> Version:           24.0.4<br> API version:       1.43<br> Go version:        go1.20.5<br> Git commit:        3713ee1<br> Built:             Fri Jul  7 14:54:21 2023<br> OS/Arch:           linux/amd64<br> Context:           default<br><br>Server: Docker Engine - Community<br> Engine:<br>  Version:          24.0.4<br>  API version:      1.43 (minimum version 1.12)<br>  Go version:       go1.20.5<br>  Git commit:       4ffc614<br>  Built:            Fri Jul  7 14:53:26 2023<br>  OS/Arch:          linux/amd64<br>  Experimental:     false<br> containerd:<br>  Version:          1.6.21<br>  GitCommit:        3dce8eb055cbb6872793272b4f20ed16117344f8<br> runc:<br>  Version:          1.1.7<br>  GitCommit:        v1.1.7-0-g860f061<br> docker-init:<br>  Version:          0.19.0<br>  GitCommit:        de40ad0<br><br></code></pre></td></tr></table></figure>
+
+<h3 id="完美删除Docker"><a href="#完美删除Docker" class="headerlink" title="完美删除Docker"></a>完美删除Docker</h3><h3 id="1，删除docker所在目录"><a href="#1，删除docker所在目录" class="headerlink" title="1，删除docker所在目录"></a>1，删除docker所在目录</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell">rm -rf /etc/docker<br>rm -rf /run/docker <br>rm -rf /var/lib/dockershim<br>rm -rf /var/lib/docker<br></code></pre></td></tr></table></figure>
+
+<h3 id="2，Kill掉Docker进程"><a href="#2，Kill掉Docker进程" class="headerlink" title="2，Kill掉Docker进程"></a>2，Kill掉Docker进程</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">ps -ef|grep docker<br>kill -9 pid<br></code></pre></td></tr></table></figure>
+
+<h3 id="3，卸载docker相关包"><a href="#3，卸载docker相关包" class="headerlink" title="3，卸载docker相关包"></a>3，卸载docker相关包</h3><p>查看相关包</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">yum list installed | grep docker<br></code></pre></td></tr></table></figure>
+
+<p>把匹配到的包执行 yum remove 删除</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs shell">yum remove containerd.io.x86_64<br>yum remove docker-ce.x86_64<br>yum remove docker-ce-cli.x86_64<br>yum remove docker-ce-rootless-extras.x86_64<br>yum remove docker-compose-plugin.x86_64<br>yum remove docker-scan-plugin.x86_64<br></code></pre></td></tr></table></figure>
+
+<p>查看docker是否卸载成功，为空就是卸载成功啦</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs applescript">docker <span class="hljs-built_in">version</span><br></code></pre></td></tr></table></figure>
 
 <p>Nginx web服务器 运行出一个80端口的网站</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">在宿主机linux上 运行nginx</span><br>1 开启服务器<br>2 在服务器上安装好运行nginx所需的依赖关系<br>3 安装nginx  yum install nginx -y<br>4 修改nginx的配置文件<br>5 启动nginx<br>6 客户端去访问nginx<br></code></pre></td></tr></table></figure>
@@ -410,10 +423,57 @@
 <p>像运行nginx的基础镜像，没有运行任何程序因此容器直接挂掉</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">运行容器的玩法</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">1 运行一个挂掉的容器（错误示范）</span><br>docker run centos:7.8.2003<br>这个写法会产生多条独立的容器记录，且容器内没有程序再跑，因此直接挂掉，留下记录<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">2 运行容器，且进入容器内，且在容器内执行某个命令</span><br>docker run -it centos:7.8.2003 sh<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">3 开启一个容器，让他帮你运行某个程序，属于前台运行，会卡住一个终端</span><br>docker run centos:7.8.2003 ping www.baidu.com<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">4 运行一个活着的容器，可以通过docker ps 看得到</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">-d 参数 让容器在后台跑着返回容器的<span class="hljs-built_in">id</span> （针对宿主机而言）</span><br>docker run -d centos:7.8.2003 ping www.baidu.com<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">5 丰富docker容器运行的参数</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">-d 后台运行</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">--<span class="hljs-built_in">rm</span> 容器挂掉后自动删除容器记录</span> <br><span class="hljs-meta prompt_"># </span><span class="language-bash">--name 给运行的容器起名</span><br>docker run -d --rm --name messiah centos:7.8.2003 ping www.baidu.com<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">6 查看容器日志，并刷新日志</span><br>docker logs 容器id<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">7 进入正在运行的容器空间内</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">-it 交互式操作</span><br>docker exec -it 容器id bash<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">8 查看容器的详细信息，用于高级的调试</span><br>docker container inspect 容器id<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">9 容器的端口映射</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">-p 宿主机端口:容器端口</span><br><span class="hljs-meta prompt_">#</span><span class="language-bash">后台运行一个nginx容器 并起个名字，端口映射配置将宿主机的80端口映射到容器内的80端口</span><br>docker run -d --name messiah_nginx -p 80:80 nginx<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">9.1 查看容器的端口映射转发情况</span><br>docker port 容器id<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">9.2 随机端口映射</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">-P 随机访问宿主机的一个空闲端口，映射到容器内打开的端口</span><br>docker run -d -P nginx<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">10 容器的提交</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">10.1 运行基础的centos7 在容器内安装vim 然后提交新的镜像</span><br>docker run -it centos7 bash<br>yum install vim -y<br>docker commit 容器id 新的镜像名 <br><span class="hljs-meta prompt_"># </span><span class="language-bash">10.2 运行新的镜像，就可以直接使用vim</span><br><br></code></pre></td></tr></table></figure>
 
-
-
-
-
+<h2 id="Dockerfile"><a href="#Dockerfile" class="headerlink" title="Dockerfile"></a>Dockerfile</h2><p>要想获得一个新的镜像除了 通过docker commit 将一个容器提交为一个新的镜像这种方式外，另外就是通过dockerfile了</p>
+<p>官方提供的dockerfile示例</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://github.com/Centos/Centos-Dockerfiles">https://github.com/Centos/Centos-Dockerfiles</a></p>
+</blockquote>
+<p>dockerfile 的主要组成部分</p>
+<blockquote>
+<p>基础镜像信息 FROM centos:6.8</p>
+<p>制作镜像操作指令 RUN yum install openssh-server -y</p>
+<p>容器启动时执行指令 CMD [“&#x2F;bin&#x2F;bash”]</p>
+</blockquote>
+<h3 id="dockerfile指令"><a href="#dockerfile指令" class="headerlink" title="dockerfile指令"></a>dockerfile指令</h3><blockquote>
+<p>FROM 这个镜像的妈妈是谁（指定基础镜像）</p>
+<p>MAINTAINER 告诉别人谁负责养它？（指定维护信息，可以没有）</p>
+<p>RUN 你想让它干啥 ( 在命令前面加上RUN即可)</p>
+<p>ADD 给它点创业资金，将宿主机的文件添加到容器内（COPY文件，会自动解压）</p>
+<p>COPY 和ADD是一样的作用 只不过不会自动解压 仅仅只是拷贝</p>
+<p>WORKDIR 我是cd 今天刚化了妆（设置当前工作目录）</p>
+<p>VOLUME 给它一个存放行李的地方（设置卷，挂载主机目录）数据目录映射</p>
+<p>EXPOSE 它要打开的门是啥（指定对外的端口）</p>
+<p>CMD 奔跑吧兄弟 （指定容器启动后要干的事情）</p>
+</blockquote>
+<p>简单应用</p>
+<blockquote>
+<p>1.在宿主机 某一个文件夹下 直接 vim Dorckerfile</p>
+<p>2，写入  修改nginx欢迎页 </p>
+<p>FROM nginx</p>
+<p>RUN echo ‘<meta charset=utf-8>messiah hello world’ &gt; &#x2F;usr&#x2F;share&#x2F;nginx&#x2F;html&#x2F;index.html</p>
+<p>3.通过dockerfile 构建镜像</p>
+<p>docker build . </p>
+<p>4.可以修改新镜像的名字</p>
+<p>docker tag 镜像id messiah_nginx</p>
+<p>5.docker run -d -p 80:80 messiah_nginx</p>
+</blockquote>
+<p>COPY</p>
+<blockquote>
+<p>copy 指令从宿主机复制文件或者目录到新的一层镜像内</p>
+<p>如</p>
+<p>COPY messiah.txt &#x2F;home&#x2F;</p>
+<p>支持多个文件，以及通配符形式复制，语法满足Golang的filepath.Match</p>
+<p>COPY messiah* &#x2F;tem&#x2F;mess?.txt &#x2F;home&#x2F;</p>
+<p>并且能够保留源文件的元数据，如权限访问时间等等 这很重要</p>
+</blockquote>
+<p>ADD</p>
+<blockquote>
+<p>特性和copy基本一致，不过多了些功能</p>
+<p>1 源文件是一个压缩文件，且是gzip、bzip2、xz、tar情况，add指定会自动解压缩该文件到目标路径</p>
+<p>2 源文件是一个url，且是一个压缩包，不会自动解压还是需要 run tar -zxf 单独解压</p>
+<p>3 源文件是一个url，docker引擎会下载该链接，放入目标路径，且权限自动设为600 若不是期望结果还是需要同run 调整</p>
+<p>Dockerfile 官方更为推荐使用copy，add包含了更多复杂的功能，且ADD会使构建缓存失效，导致镜像构建缓慢</p>
+</blockquote>
 
                 
               </div>
