@@ -24,7 +24,7 @@
 <meta property="og:description" content="linux笔记linux的文件结构是树形结构 根目录为 &#x2F;  linux下一些主要目录的作用 12345678910111213141516171819202122232425&#x2F;bin 二进制可执行命令&#x2F;dev 设备特殊文件&#x2F;boot 系统内核及启动有关的文件&#x2F;etc 系统管理和配置文件&#x2F;etc&#x2F;rc.d 启动的配置文件和脚本&#x2F;home 用户主目录的根点，比如用户user的主目录就是&#x2F;h">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-08-04T02:08:04.000Z">
-<meta property="article:modified_time" content="2022-08-09T02:11:10.150Z">
+<meta property="article:modified_time" content="2024-01-19T13:41:11.463Z">
 <meta property="article:author" content="Messiah">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -220,7 +220,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.6k 字
+          2.9k 字
         
       </span>
     
@@ -231,7 +231,7 @@
         
         
         
-          22 分钟
+          24 分钟
         
       </span>
     
@@ -292,7 +292,7 @@
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2022-08-09 10:11:10
+                    本文最后更新于：2024-01-19 21:41:11
                   
                 
               </p>
@@ -309,13 +309,8 @@
 <p>命令行界面</p>
 <figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs gherkin">[root<span class="hljs-meta">@localhost</span> ~]<span class="hljs-comment">#</span><br>	root : 表示当前用户的名称<br>	<span class="hljs-meta">@：分隔符</span><br>	localhost：当前主机的主机名<br>	~：用户当前所在的目录名称 显示~表示当前目录即为用户家目录<br>	<span class="hljs-comment">#：用户身份提示符，#表示超级用户，也就是管理员 $表示普通用户</span><br></code></pre></td></tr></table></figure>
 
-<p>linux常用命令</p>
-<ol>
-<li><p>简单系统命令</p>
-<p><code>ip a</code>:查看ip地址<br><code>ip 目标机器的ip</code>:ping网络(测试网络连通)<br><code>date</code>:查看系统时间<br><code>logout</code>:注销<br><code>shutdown now</code>:关机<br><code>reboot</code>:重启<br><code>clear</code>:清屏</p>
-</li>
-<li><p>文件管理命令</p>
-<ol>
+<h2 id="linux常用命令"><a href="#linux常用命令" class="headerlink" title="linux常用命令"></a>linux常用命令</h2><h3 id="1-简单系统命令"><a href="#1-简单系统命令" class="headerlink" title="1.简单系统命令"></a>1.简单系统命令</h3><p><code>ip a</code>:查看ip地址<br><code>ip 目标机器的ip</code>:ping网络(测试网络连通)<br><code>date</code>:查看系统时间<br><code>logout</code>:注销<br><code>shutdown now</code>:关机<br><code>reboot</code>:重启<br><code>clear</code>:清屏</p>
+<h3 id="2-文件管理命令"><a href="#2-文件管理命令" class="headerlink" title="2.文件管理命令"></a>2.文件管理命令</h3><ol>
 <li><p>查看文件列表</p>
 <p><code>ls</code>:查看当前目录下的文件列表</p>
 <p><code>ls /</code>:查看指定目录下的文件</p>
@@ -352,8 +347,6 @@
 <li><p>获取文件的md5指纹(数字签名)</p>
 <p><code>md5sum 文件名</code>:获取文件的md5指纹,数字签名,又称数字指纹,可以验证文件是否被修改,一个文件通过计算得到的一串字符串,文件内容的唯一标记(文件内容不变,指纹不会变)</p>
 </li>
-</ol>
-</li>
 <li><p>文件内容查看命令</p>
 <p>​	<code>cat 文件名</code>:查看文件中的全部信息(适合查看小文档)</p>
 <p>​	<code>less 文件名</code>:以分页的方式浏览文件信息(适合查看大文档)，进入浏览模式。浏览模式快捷键 ↑ 上一行    ↓ 下一行   G 最后一页    g 第一页    空格 下一页    &#x2F;关键词 搜索关键词  q 退出浏览模式，回到Linux命令行模式</p>
@@ -370,15 +363,15 @@
 <figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs perl"><span class="hljs-comment"># 语法</span><br>	<span class="hljs-keyword">grep</span> -参数 要查找的目录范围<br>	<span class="hljs-comment"># 参数</span><br>	-n 显示查找结果所在行号<br>	-R 递归查找目录下的所有文件<br><span class="hljs-comment"># 例子</span><br>	<span class="hljs-keyword">grep</span> aries /etc<br>	<span class="hljs-keyword">grep</span> aries /etc/passwd<br></code></pre></td></tr></table></figure></li>
 </ol>
 </li>
-<li><p>系统管理</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-comment"># 静态查看系统进程</span><br>	<span class="hljs-built_in">ps</span> <span class="hljs-literal">-aux</span><br><span class="hljs-comment"># 查找指定进程</span><br>	<span class="hljs-built_in">ps</span> <span class="hljs-literal">-ef</span> | grep 进程关键字<br><span class="hljs-comment"># 显示指定用户的进程信息</span><br>	<span class="hljs-built_in">ps</span> <span class="hljs-literal">-u</span> root  <span class="hljs-comment">#显示指定用户的进程信息</span><br><span class="hljs-comment"># 实时查看系统进程</span><br>	top<br>	<span class="hljs-comment"># 快捷键</span><br>		↑ 下翻<br>		↓ 上翻<br>		q 退出<br><span class="hljs-comment"># 关闭进程</span><br>	<span class="hljs-built_in">kill</span> 进程id <br><span class="hljs-comment"># 强制关闭进程(谨慎使用)</span><br>	<span class="hljs-built_in">kill</span> <span class="hljs-literal">-9</span> 进程id<br></code></pre></td></tr></table></figure>
-</li>
-<li><p>输出</p>
-<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs applescript"><span class="hljs-comment"># 覆盖输出</span><br><span class="hljs-comment"># 将命令1的执行结果，输出到后面的文件中。</span><br>`覆盖写入`<br>	命令<span class="hljs-number">1</span> &gt; 文件<br><span class="hljs-comment"># 例子</span><br>	<span class="hljs-built_in">date</span> &gt; <span class="hljs-built_in">date</span>.<span class="hljs-built_in">log</span><br>	<br><span class="hljs-comment"># 追加输出</span><br><span class="hljs-comment"># 将命令1的执行结果，输出到后面的文件中。</span><br>`追加写入`<br>	命令<span class="hljs-number">1</span> &gt;&gt; 文件<br><span class="hljs-comment"># 例子</span><br>	<span class="hljs-built_in">date</span> &gt;&gt; <span class="hljs-built_in">date</span>.<span class="hljs-built_in">log</span><br></code></pre></td></tr></table></figure>
-</li>
-<li><p>管道</p>
-<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs 1c"><span class="hljs-meta"># 管道</span><br><span class="hljs-meta"># 语法，将命令1的输出结果，作为命令2的输入</span><br>命令<span class="hljs-number">1</span> <span class="hljs-string">| 命令2</span><br><span class="hljs-meta"># 例子</span><br>查找aries用户：cat /etc/passwd <span class="hljs-string">| grep -n “baizhi”</span><br>查找aries组：cat /etc/group <span class="hljs-string">| grep -n “baizhi”</span><br>查找sshd进程：ps -aux <span class="hljs-string">| grep sshd</span><br></code></pre></td></tr></table></figure></li>
 </ol>
+<h3 id="3-系统管理"><a href="#3-系统管理" class="headerlink" title="3.系统管理"></a>3.系统管理</h3>   <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-comment"># 静态查看系统进程</span><br>	<span class="hljs-built_in">ps</span> <span class="hljs-literal">-aux</span><br><span class="hljs-comment"># 查找指定进程</span><br>	<span class="hljs-built_in">ps</span> <span class="hljs-literal">-ef</span> | grep 进程关键字<br><span class="hljs-comment"># 显示指定用户的进程信息</span><br>	<span class="hljs-built_in">ps</span> <span class="hljs-literal">-u</span> root  <span class="hljs-comment">#显示指定用户的进程信息</span><br><span class="hljs-comment"># 实时查看系统进程</span><br>	top<br>	<span class="hljs-comment"># 快捷键</span><br>		↑ 下翻<br>		↓ 上翻<br>		q 退出<br><span class="hljs-comment"># 关闭进程</span><br>	<span class="hljs-built_in">kill</span> 进程id <br><span class="hljs-comment"># 强制关闭进程(谨慎使用)</span><br>	<span class="hljs-built_in">kill</span> <span class="hljs-literal">-9</span> 进程id<br></code></pre></td></tr></table></figure>
+
+<h3 id="4-输出"><a href="#4-输出" class="headerlink" title="4.输出"></a>4.输出</h3><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs livecodeserver"><span class="hljs-comment"># 覆盖输出</span><br><span class="hljs-comment"># 将命令1的执行结果，输出到后面的文件中。</span><br>`覆盖写入`<br>	命令<span class="hljs-number">1</span> &gt; 文件<br><span class="hljs-comment"># 例子</span><br>	<span class="hljs-built_in">date</span> &gt; <span class="hljs-built_in">date</span>.<span class="hljs-built_in">log</span><br>	<br><span class="hljs-comment"># 追加输出</span><br><span class="hljs-comment"># 将命令1的执行结果，输出到后面的文件中。</span><br>`追加写入`<br>	命令<span class="hljs-number">1</span> &gt;&gt; 文件<br><span class="hljs-comment"># 例子</span><br>	<span class="hljs-built_in">date</span> &gt;&gt; <span class="hljs-built_in">date</span>.<span class="hljs-built_in">log</span><br>	<br>linux 使用 sed 命令：<br>sed 是一个强大的文本处理工具，可以用来替换文件中的文本。下面是一个示例命令，将文件中的 <span class="hljs-string">&quot;old_content&quot;</span> 替换为 <span class="hljs-string">&quot;new_content&quot;</span>：<br>sed -i <span class="hljs-string">&#x27;s/old_content/new_content/g&#x27;</span> <span class="hljs-built_in">file</span>.txt<br>这个命令将直接修改 <span class="hljs-built_in">file</span>.txt 文件，将所有匹配到的 <span class="hljs-string">&quot;old_content&quot;</span> 替换为 <span class="hljs-string">&quot;new_content&quot;</span>。<br></code></pre></td></tr></table></figure>
+
+<h3 id="5-管道"><a href="#5-管道" class="headerlink" title="5.管道"></a>5.管道</h3><figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs 1c"><span class="hljs-meta"># 管道</span><br><span class="hljs-meta"># 语法，将命令1的输出结果，作为命令2的输入</span><br>命令<span class="hljs-number">1</span> <span class="hljs-string">| 命令2</span><br><span class="hljs-meta"># 例子</span><br>查找aries用户：cat /etc/passwd <span class="hljs-string">| grep -n “baizhi”</span><br>查找aries组：cat /etc/group <span class="hljs-string">| grep -n “baizhi”</span><br>查找sshd进程：ps -aux <span class="hljs-string">| grep sshd</span><br></code></pre></td></tr></table></figure>
+
+
+
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44191814/article/details/120091363">https://blog.csdn.net/weixin_44191814/article/details/120091363</a></p>
 
                 
